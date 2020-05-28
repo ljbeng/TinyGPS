@@ -76,6 +76,10 @@ public:
   // satellites used in last full GPGGA sentence
   inline unsigned short satellites() { return _numsats; }
 
+  // fix mode value in last full GPGGA sentence
+  inline unsigned short fixedmode() { return _fixedmode; }
+
+
   // horizontal dilution of precision in 100ths
   inline unsigned long hdop() { return _hdop; }
 
@@ -112,7 +116,8 @@ private:
   unsigned long  _course, _new_course;
   unsigned long  _hdop, _new_hdop;
   unsigned short _numsats, _new_numsats;
-
+  unsigned short _fixedmode, _new_fixedmode;
+  
   unsigned long _last_time_fix, _new_time_fix;
   unsigned long _last_position_fix, _new_position_fix;
 
